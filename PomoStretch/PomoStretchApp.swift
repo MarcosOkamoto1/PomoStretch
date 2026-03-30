@@ -4,6 +4,7 @@
 //
 //  Created by Academy on 27/03/26.
 //
+import Foundation
 
 import SwiftUI
 
@@ -11,7 +12,7 @@ import SwiftUI
 struct PomoStretchApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TimerView()
         }
     }
 }

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Foundation
 
 struct NeonProgressTimer: View {
     var progress: CGFloat
