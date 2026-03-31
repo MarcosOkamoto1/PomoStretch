@@ -35,6 +35,7 @@ class TimerViewModel: ObservableObject {
             guard let self = self else { return }
             if self.timeRemaining > 0 {
                 self.timeRemaining -= 1
+                self.neonRingTimerProgress()
             }else{
                 self.timer?.invalidate()
                 self.isRunning = false
@@ -49,5 +50,34 @@ class TimerViewModel: ObservableObject {
         
         return String(format: "%02d:%02d", minutes,seconds)
         
+    }
+    
+    func pauseTimer() {
+        timer?.invalidate()
+        isRunning = false
+    }
+    
+    func neonRingTimerProgress(){
+       progress = CGFloat(timeRemaining) / CGFloat(totalTime)
+    }
+    
+    func setShortPause(){
+        pauseTimer()
+        actualSession = .shortPause
+        
+        totalTime = 60 * 5
+        timeRemaining = totalTime
+        
+        neonRingTimerProgress()
+    }
+    
+    func setLongPause(){
+        pauseTimer()
+        actualSession = .longPause
+        
+        totalTime = 25 * 60
+        timeRemaining = totalTime
+        
+        neonRingTimerProgress()
     }
 }
