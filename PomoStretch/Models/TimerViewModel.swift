@@ -29,8 +29,8 @@ class TimerViewModel: ObservableObject {
     var timer: Timer?
     
     func startTimer(){
-    guard !isRunning else {return}
-    isRunning = true
+        guard !isRunning else {return}
+        isRunning = true
         timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { [weak self] _ in
             guard let self = self else { return }
             if self.timeRemaining > 0 {
@@ -39,6 +39,19 @@ class TimerViewModel: ObservableObject {
             }else{
                 self.timer?.invalidate()
                 self.isRunning = false
+                
+                if self.actualSession == .focus{
+                    self.sessionNumber += 1
+                    if self.sessionNumber > self.totalSessions{
+                        self.setLongPause()
+                        self.sessionNumber = 1
+                    } else {
+                        self.setShortPause()
+                    }
+                    
+                } else{
+                    self.setFocus()
+                }
             }
         }
         
@@ -58,26 +71,39 @@ class TimerViewModel: ObservableObject {
     }
     
     func neonRingTimerProgress(){
-       progress = CGFloat(timeRemaining) / CGFloat(totalTime)
+        progress = CGFloat(timeRemaining) / CGFloat(totalTime)
     }
     
     func setShortPause(){
         pauseTimer()
         actualSession = .shortPause
         
-        totalTime = 60 * 5
+        totalTime = 5 * 60
         timeRemaining = totalTime
         
         neonRingTimerProgress()
+        startTimer()
     }
     
     func setLongPause(){
         pauseTimer()
         actualSession = .longPause
         
+        totalTime = 30 * 60
+        timeRemaining = totalTime
+        
+        neonRingTimerProgress()
+        startTimer()
+    }
+    
+    func setFocus(){
+        pauseTimer()
+        actualSession = .focus
+        
         totalTime = 25 * 60
         timeRemaining = totalTime
         
         neonRingTimerProgress()
+        startTimer()
     }
 }

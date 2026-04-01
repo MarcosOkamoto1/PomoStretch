@@ -20,7 +20,7 @@ struct TimerView: View {
                 VStack(spacing: 12) {
                     Text("Pomodoro Timer")
                         .font(.system(size: 32, weight: .bold))
-                    SessionIndicator(currentSession: 1, totalSessions: 3)
+                    SessionIndicator(currentSession: viewModel.sessionNumber, totalSessions: viewModel.totalSessions)
                 }
                 
                 Spacer()
