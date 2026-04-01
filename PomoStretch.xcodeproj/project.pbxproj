@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F14E9132F7D99F1008C4D06 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F14E9122F7D99F1008C4D06 /* MainTabView.swift */; };
+		9F14E9152F7DA16B008C4D06 /* StretchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F14E9142F7DA16B008C4D06 /* StretchView.swift */; };
 		9F74A8F92F7AED0A00280E1D /* SessionIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F74A8F82F7AED0A00280E1D /* SessionIndicator.swift */; };
 		9F74A8FB2F7AED4600280E1D /* ResetButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F74A8FA2F7AED4600280E1D /* ResetButton.swift */; };
 		9F74A8FD2F7AF80800280E1D /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F74A8FC2F7AF80800280E1D /* TimerViewModel.swift */; };
+		9F9AA4C82F7DA64500487868 /* ExerciciseCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9AA4C72F7DA64500487868 /* ExerciciseCards.swift */; };
 		9FCFD8E32F77009A009D1BF0 /* PomoStretchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCFD8E22F77009A009D1BF0 /* PomoStretchApp.swift */; };
 		9FCFD8E52F77009A009D1BF0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCFD8E42F77009A009D1BF0 /* ContentView.swift */; };
 		9FCFD8E72F77009D009D1BF0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FCFD8E62F77009D009D1BF0 /* Assets.xcassets */; };
@@ -21,9 +24,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9F14E9122F7D99F1008C4D06 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		9F14E9142F7DA16B008C4D06 /* StretchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StretchView.swift; sourceTree = "<group>"; };
 		9F74A8F82F7AED0A00280E1D /* SessionIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionIndicator.swift; sourceTree = "<group>"; };
 		9F74A8FA2F7AED4600280E1D /* ResetButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetButton.swift; sourceTree = "<group>"; };
 		9F74A8FC2F7AF80800280E1D /* TimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
+		9F9AA4C72F7DA64500487868 /* ExerciciseCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciciseCards.swift; sourceTree = "<group>"; };
 		9FCFD8DF2F77009A009D1BF0 /* PomoStretch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PomoStretch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FCFD8E22F77009A009D1BF0 /* PomoStretchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomoStretchApp.swift; sourceTree = "<group>"; };
 		9FCFD8E42F77009A009D1BF0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -62,6 +68,7 @@
 				9FFFEB762F7711C50023A66C /* NeonProgressTimer.swift */,
 				9F74A8FA2F7AED4600280E1D /* ResetButton.swift */,
 				9F74A8F82F7AED0A00280E1D /* SessionIndicator.swift */,
+				9F9AA4C72F7DA64500487868 /* ExerciciseCards.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -71,6 +78,8 @@
 			children = (
 				9FFFEB782F7727330023A66C /* TimerView.swift */,
 				9FCFD8E42F77009A009D1BF0 /* ContentView.swift */,
+				9F14E9122F7D99F1008C4D06 /* MainTabView.swift */,
+				9F14E9142F7DA16B008C4D06 /* StretchView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -191,6 +200,9 @@
 				9FCFD8E52F77009A009D1BF0 /* ContentView.swift in Sources */,
 				9FFFEB772F7711C50023A66C /* NeonProgressTimer.swift in Sources */,
 				9FCFD8E32F77009A009D1BF0 /* PomoStretchApp.swift in Sources */,
+				9F9AA4C82F7DA64500487868 /* ExerciciseCards.swift in Sources */,
+				9F14E9152F7DA16B008C4D06 /* StretchView.swift in Sources */,
+				9F14E9132F7D99F1008C4D06 /* MainTabView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

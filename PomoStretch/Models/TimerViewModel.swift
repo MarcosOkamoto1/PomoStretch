@@ -82,7 +82,6 @@ class TimerViewModel: ObservableObject {
         timeRemaining = totalTime
         
         neonRingTimerProgress()
-        startTimer()
     }
     
     func setLongPause(){
@@ -93,7 +92,6 @@ class TimerViewModel: ObservableObject {
         timeRemaining = totalTime
         
         neonRingTimerProgress()
-        startTimer()
     }
     
     func setFocus(){
