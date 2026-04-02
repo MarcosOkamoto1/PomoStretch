@@ -15,13 +15,13 @@ struct MainTabView: View {
                 .tabItem {
                     Label("Timer", systemImage: "timer")
                 }
-            Text("Tela de Exercícios em Construção 🚧")
-                .font(.headline)
+            StretchView()
                 .tabItem {
                     Label("Stretch", systemImage: "figure.walk")
                 }
         }
         .accentColor(.purple)
+        .preferredColorScheme(.dark)
     }
 }
 

@@ -33,7 +33,7 @@ struct TimerView: View {
                     ModeButton(title: "Short Pause", action: {viewModel.setShortPause()}, iconName: "cup.and.saucer.fill")
                     ModeButton(title: "Long Pause", action: {viewModel.setLongPause()}, iconName: "figure.walk")
                 }
-                .padding(.bottom, 32)
+                .padding(.bottom)
                 
                 PrimaryButton(title: viewModel.isRunning ? "Pause": "Start",
                               action: {

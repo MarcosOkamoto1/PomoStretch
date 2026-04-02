@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		9F14E9132F7D99F1008C4D06 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F14E9122F7D99F1008C4D06 /* MainTabView.swift */; };
 		9F14E9152F7DA16B008C4D06 /* StretchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F14E9142F7DA16B008C4D06 /* StretchView.swift */; };
+		9F6B62EE2F7EE45400F47552 /* CapsuleIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6B62ED2F7EE45400F47552 /* CapsuleIndicator.swift */; };
 		9F74A8F92F7AED0A00280E1D /* SessionIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F74A8F82F7AED0A00280E1D /* SessionIndicator.swift */; };
 		9F74A8FB2F7AED4600280E1D /* ResetButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F74A8FA2F7AED4600280E1D /* ResetButton.swift */; };
 		9F74A8FD2F7AF80800280E1D /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F74A8FC2F7AF80800280E1D /* TimerViewModel.swift */; };
@@ -26,6 +27,7 @@
 /* Begin PBXFileReference section */
 		9F14E9122F7D99F1008C4D06 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		9F14E9142F7DA16B008C4D06 /* StretchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StretchView.swift; sourceTree = "<group>"; };
+		9F6B62ED2F7EE45400F47552 /* CapsuleIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsuleIndicator.swift; sourceTree = "<group>"; };
 		9F74A8F82F7AED0A00280E1D /* SessionIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionIndicator.swift; sourceTree = "<group>"; };
 		9F74A8FA2F7AED4600280E1D /* ResetButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetButton.swift; sourceTree = "<group>"; };
 		9F74A8FC2F7AF80800280E1D /* TimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 				9F74A8FA2F7AED4600280E1D /* ResetButton.swift */,
 				9F74A8F82F7AED0A00280E1D /* SessionIndicator.swift */,
 				9F9AA4C72F7DA64500487868 /* ExerciciseCards.swift */,
+				9F6B62ED2F7EE45400F47552 /* CapsuleIndicator.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -193,6 +196,7 @@
 			files = (
 				9FFFEB792F7727330023A66C /* TimerView.swift in Sources */,
 				9F74A8FD2F7AF80800280E1D /* TimerViewModel.swift in Sources */,
+				9F6B62EE2F7EE45400F47552 /* CapsuleIndicator.swift in Sources */,
 				9FFFEB752F770C930023A66C /* ModeButton.swift in Sources */,
 				9F74A8F92F7AED0A00280E1D /* SessionIndicator.swift in Sources */,
 				9F74A8FB2F7AED4600280E1D /* ResetButton.swift in Sources */,
