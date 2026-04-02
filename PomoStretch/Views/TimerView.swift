@@ -18,10 +18,20 @@ struct TimerView: View {
                 Spacer()
                 
                 VStack(spacing: 12) {
-                    Text("Pomodoro Timer")
-                        .font(.system(size: 32, weight: .bold))
+                    HStack{
+                        Spacer()
+                        Text("Pomodoro Timer")
+                            .font(.system(size: 32, weight: .bold))
+                            .padding()
+                        NavigationLink(destination: SettingsView()) {Image(systemName: "gearshape.fill")
+                                .font(.title2)
+                                .foregroundColor(.purple)
+                                .padding()
+                        }
+                    }
                     SessionIndicator(currentSession: viewModel.sessionNumber, totalSessions: viewModel.totalSessions)
                 }
+                
                 
                 Spacer()
                 
