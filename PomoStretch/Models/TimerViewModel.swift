@@ -8,7 +8,6 @@
 import SwiftUI
 import Foundation
 
-
 class TimerViewModel: ObservableObject {
     enum currentSession{
         case focus
@@ -21,7 +20,6 @@ class TimerViewModel: ObservableObject {
     @Published var isRunning : Bool = false
     @Published var actualSession: currentSession = .focus
     @Published var sessionNumber: Int = 1
-    
     
     let totalSessions = 3
     var totalTime = 25 * 60
@@ -36,33 +34,31 @@ class TimerViewModel: ObservableObject {
             if self.timeRemaining > 0 {
                 self.timeRemaining -= 1
                 self.neonRingTimerProgress()
-            }else{
+            } else {
                 self.timer?.invalidate()
                 self.isRunning = false
                 
-                if self.actualSession == .focus{
+                if self.actualSession == .focus {
                     self.sessionNumber += 1
-                    if self.sessionNumber > self.totalSessions{
+                    if self.sessionNumber > self.totalSessions {
                         self.setLongPause()
                         self.sessionNumber = 1
                     } else {
                         self.setShortPause()
                     }
                     
-                } else{
+                } else {
                     self.setFocus()
                 }
             }
         }
-        
     }
     
     func timeString() -> String{
-        let minutes = timeRemaining/60
+        let minutes = timeRemaining / 60
         let seconds = timeRemaining % 60
         
-        return String(format: "%02d:%02d", minutes,seconds)
-        
+        return String(format: "%02d:%02d", minutes, seconds)
     }
     
     func pauseTimer() {
@@ -103,5 +99,16 @@ class TimerViewModel: ObservableObject {
         
         neonRingTimerProgress()
         startTimer()
+    }
+    
+    func resetTimer() {
+        pauseTimer()
+        actualSession = .focus
+        
+        sessionNumber = 1
+        
+        totalTime = 25 * 60
+        timeRemaining = totalTime
+        progress = 1.0
     }
 }
