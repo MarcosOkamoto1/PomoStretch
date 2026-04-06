@@ -8,10 +8,12 @@
 import SwiftUI
 import Foundation
 
+import SwiftUI
+
 struct StretchView: View {
     var body: some View {
         ZStack {
-            Color.black.ignoresSafeArea(.all)
+            Color("BackgroundDark").ignoresSafeArea()
             
             ScrollView(showsIndicators: false) {
                 VStack(spacing: 28) {
@@ -27,10 +29,9 @@ struct StretchView: View {
                             .foregroundColor(.gray)
                             .multilineTextAlignment(.center)
                     }
-                    .padding(.top, 20)
+                    .padding(.top, 40)
                     
-                    CapsuleIndicator(text: "Short Pause (5 min)",
-                                     iconName: "cup.and.saucer.fill")
+                    CapsuleIndicator(text: "Short Pause (5 min)", iconName: "cup.and.saucer.fill")
                     
                     ExerciciseCards(title: "Abre e Fecha...",
                                     subTitle: "Melhora a circulação",
@@ -41,29 +42,28 @@ struct StretchView: View {
                     ExerciciseCards(title: "Alongamento Punho",
                                     subTitle: "Estica o antebraço",
                                     description: "Mão para baixo, puxe os dedos.",
-                                    imageName: "mao_aberta")
+                                    imageName: "mao_baixo")
                     
                     ExerciciseCards(title: "Elevação Punho",
                                     subTitle: "Alivia tensão",
                                     description: "Mão para cima, puxe os dedos.",
-                                    imageName: "mao_aberta")
+                                    imageName: "mao_cima")
                     
-                    CapsuleIndicator(text: "Long Pause (20 min)",
-                                     iconName: "moon.stars.fill")
+                    CapsuleIndicator(text: "Long Pause (20 min)", iconName: "moon.stars.fill")
                         .padding(.top, 16)
                     
                     ExerciciseCards(title: "Liberação...",
                                     subTitle: "Relaxa a palma",
                                     description: "Massageie o centro da mão.",
-                                    imageName: "mao_aberta")
+                                    imageName: "mao_meio")
+                    
                     ExerciciseCards(title: "Rotação...",
                                     subTitle: "Lubrifica a articulação",
                                     description: "Gire os punhos 5x para cada lado.",
-                                    imageName: "mao_aberta")
-                    
+                                    imageName: "mao_girando")
                 }
                 .padding(.horizontal, 20)
-                .padding(.bottom, 40)
+                .padding(.bottom, 20)
             }
         }
     }

@@ -12,7 +12,7 @@ import SwiftUI
 struct PomoStretchApp: App {
     var body: some Scene {
         WindowGroup {
-            MainTabView()
+            MainView()
         }
     }
 }

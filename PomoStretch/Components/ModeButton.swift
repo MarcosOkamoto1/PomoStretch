@@ -13,18 +13,18 @@ struct ModeButton: View {
     var iconName: String
     var body: some View {
         Button(action: {
-            action(
-                
-            )
+            action()
         }) {
             VStack(spacing: 8) {
                 Image(systemName: iconName)
                 Text(title)
             }
             .font(.system(size: 14, weight: .semibold))
-            .foregroundColor(.purple)
+            .foregroundColor(Color("PurpleNeon")) // Corrigido
             .frame(width: 130, height: 60)
-            .overlay(Capsule().stroke(Color.purple, lineWidth: 1.5))
+            .background(Color("PurpleNeon").opacity(0.05))
+            .overlay(Capsule().stroke(Color("PurpleNeon"), lineWidth: 1.5))
+            .clipShape(Capsule())
         }
     }
 }

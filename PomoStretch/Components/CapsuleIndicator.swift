@@ -11,22 +11,20 @@ import Foundation
 struct CapsuleIndicator: View {
     let text: String
     let iconName: String
-    
     var body: some View {
         HStack(spacing: 8) {
             Image(systemName: iconName)
                 .font(.caption)
-                .foregroundColor(.white)
-            
             Text(text)
                 .font(.caption)
                 .fontWeight(.semibold)
-                .foregroundColor(.white)
         }
+        .foregroundColor(.white)
         .padding(.vertical, 8)
         .padding(.horizontal, 16)
-        .background(Color(red: 0.15, green: 0.1, blue: 0.25))
+        .background(Color("PurpleSurface")) // Cor do Assets
         .clipShape(Capsule())
+        .overlay(Capsule().stroke(Color("PurpleNeon").opacity(0.5), lineWidth: 1))
     }
 }
 

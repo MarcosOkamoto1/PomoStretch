@@ -12,17 +12,15 @@ struct PrimaryButton: View {
     var action: () -> Void
     var body: some View {
         Button(action: {
-            action(
-                
-            )
+            action()
         }) {
             Text(title)
                 .font(.title)
                 .frame(width: 200, height: 56)
                 .foregroundColor(.white)
-                .background(Color.purple)
+                .background(Color("PurplePrimary")) // Corrigido
                 .clipShape(Capsule())
-                
+                .shadow(color: Color("PurplePrimary").opacity(0.4), radius: 8, x: 0, y: 4)
         }
     }
 }

@@ -15,18 +15,27 @@ struct NeonProgressTimer: View {
         ZStack{
             Circle()
                 .stroke(lineWidth: 20)
-                .foregroundColor(Color.white.opacity(0.1))
+                .foregroundColor(Color.white.opacity(0.05))
+            
             Circle()
                 .trim(from: 0.0, to: progress)
-                .stroke(Color.purple, style: StrokeStyle(lineWidth: 20, lineCap: .round))
+                .stroke(
+                    LinearGradient(
+                        colors: [Color("PurpleNeon"), Color("PurplePrimary")],
+                        startPoint: .topLeading,
+                        endPoint: .bottomTrailing
+                    ),
+                    style: StrokeStyle(lineWidth: 20, lineCap: .round)
+                )
                 .rotationEffect(Angle(degrees: -90))
-                .shadow(color: .purple, radius: 15)
-                .animation(.linear, value: progress)
+                .shadow(color: Color("PurpleNeon").opacity(0.6), radius: 15)
+                .animation(.linear(duration: 1.0), value: progress)
 
-                Text(timeString)
-                .font(.system(size: 90, weight: .bold))
-        }.padding(40)
-        
+            Text(timeString)
+                .font(.system(size: 80, weight: .bold, design: .rounded))
+                .foregroundColor(.white)
+        }
+        .padding(40)
     }
 }
 

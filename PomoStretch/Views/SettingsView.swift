@@ -1,10 +1,3 @@
-//
-//  SettingsView.swift
-//  PomoStretch
-//
-//  Created by Academy on 02/04/26.
-//
-
 import SwiftUI
 
 struct SettingsView: View {
@@ -15,25 +8,23 @@ struct SettingsView: View {
     @AppStorage("notificationsEnabled") private var notificationsEnabled: Bool = true
     
     var body: some View {
-        NavigationView {
-            Form {
-                Section(header: Text("Tempos do Pomodoro (Minutos)")) {
-                    Stepper("Tempo de Foco: \(focusDuration) min", value: $focusDuration, in: 10...60, step: 5)
-                    Stepper("Pausa Curta: \(shortBreakDuration) min", value: $shortBreakDuration, in: 1...15, step: 1)
-                    Stepper("Pausa Longa: \(longBreakDuration) min", value: $longBreakDuration, in: 10...45, step: 5)
-                }
-                
-                Section(header: Text("Ciclos")) {
-                    Stepper("Ciclos até a pausa longa: \(cycles)", value: $cycles, in: 1...8, step: 1)
-                }
-                
-                Section(header: Text("Avisos"), footer: Text("Lembre-se de aceitar as permissões de notificação do sistema para ser avisado sobre os alongamentos.")) {
-                    Toggle("Ativar Notificações", isOn: $notificationsEnabled)
-                        .tint(.purple)
-                }
+        Form {
+            Section(header: Text("Tempos do Pomodoro (Minutos)")) {
+                Stepper("Tempo de Foco: \(focusDuration) min", value: $focusDuration, in: 10...60, step: 5)
+                Stepper("Pausa Curta: \(shortBreakDuration) min", value: $shortBreakDuration, in: 1...15, step: 1)
+                Stepper("Pausa Longa: \(longBreakDuration) min", value: $longBreakDuration, in: 10...45, step: 5)
             }
-            .navigationTitle("Configurações")
+            
+            Section(header: Text("Ciclos")) {
+                Stepper("Ciclos até a pausa longa: \(cycles)", value: $cycles, in: 1...8, step: 1)
+            }
+            
+            Section(header: Text("Avisos"), footer: Text("Lembre-se de aceitar as permissões de notificação do sistema para ser avisado sobre os alongamentos.")) {
+                Toggle("Ativar Notificações", isOn: $notificationsEnabled)
+                    .tint(.purple)
+            }
         }
+        .navigationTitle("Configurações")
     }
 }
 
