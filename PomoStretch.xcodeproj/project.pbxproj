@@ -17,6 +17,7 @@
 		9F74A8FB2F7AED4600280E1D /* ResetButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F74A8FA2F7AED4600280E1D /* ResetButton.swift */; };
 		9F74A8FD2F7AF80800280E1D /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F74A8FC2F7AF80800280E1D /* TimerViewModel.swift */; };
 		9F9AA4C82F7DA64500487868 /* ExerciciseCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9AA4C72F7DA64500487868 /* ExerciciseCards.swift */; };
+		9FC65F1A2F86CA020019CE99 /* Ping.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 9FC65F192F86CA020019CE99 /* Ping.aiff */; };
 		9FCFD8E32F77009A009D1BF0 /* PomoStretchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCFD8E22F77009A009D1BF0 /* PomoStretchApp.swift */; };
 		9FCFD8E52F77009A009D1BF0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCFD8E42F77009A009D1BF0 /* ContentView.swift */; };
 		9FCFD8E72F77009D009D1BF0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FCFD8E62F77009D009D1BF0 /* Assets.xcassets */; };
@@ -38,6 +39,8 @@
 		9F74A8FA2F7AED4600280E1D /* ResetButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetButton.swift; sourceTree = "<group>"; };
 		9F74A8FC2F7AF80800280E1D /* TimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
 		9F9AA4C72F7DA64500487868 /* ExerciciseCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciciseCards.swift; sourceTree = "<group>"; };
+		9FC65F192F86CA020019CE99 /* Ping.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Ping.aiff; sourceTree = "<group>"; };
+		9FC65F1B2F86CBB60019CE99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		9FCFD8DF2F77009A009D1BF0 /* PomoStretch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PomoStretch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FCFD8E22F77009A009D1BF0 /* PomoStretchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomoStretchApp.swift; sourceTree = "<group>"; };
 		9FCFD8E42F77009A009D1BF0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -115,12 +118,14 @@
 		9FCFD8E12F77009A009D1BF0 /* PomoStretch */ = {
 			isa = PBXGroup;
 			children = (
+				9FC65F1B2F86CBB60019CE99 /* Info.plist */,
 				9F74A9022F7B007A00280E1D /* Views */,
 				9F74A9002F7B004600280E1D /* Components */,
 				9F74A8FE2F7B002300280E1D /* Models */,
 				9FCFD8E92F77009D009D1BF0 /* Preview Assets.xcassets */,
 				9FCFD8E62F77009D009D1BF0 /* Assets.xcassets */,
 				9FCFD8E22F77009A009D1BF0 /* PomoStretchApp.swift */,
+				9FC65F192F86CA020019CE99 /* Ping.aiff */,
 				9FCFD8E82F77009D009D1BF0 /* Preview Content */,
 			);
 			path = PomoStretch;
@@ -193,6 +198,7 @@
 			files = (
 				9FCFD8EA2F77009D009D1BF0 /* Preview Assets.xcassets in Resources */,
 				9FCFD8E72F77009D009D1BF0 /* Assets.xcassets in Resources */,
+				9FC65F1A2F86CA020019CE99 /* Ping.aiff in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,6 +357,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"PomoStretch/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PomoStretch/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -379,6 +386,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"PomoStretch/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PomoStretch/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
