@@ -20,7 +20,7 @@ struct ModeButton: View {
                 Text(title)
             }
             .font(.system(size: 14, weight: .semibold))
-            .foregroundColor(Color("PurpleNeon")) // Corrigido
+            .foregroundColor(Color("PurpleNeon")) 
             .frame(width: 130, height: 60)
             .background(Color("PurpleNeon").opacity(0.05))
             .overlay(Capsule().stroke(Color("PurpleNeon"), lineWidth: 1.5))

@@ -22,7 +22,6 @@ struct ResetButton: View {
                 .background(Color("SurfaceDark"))
                 .clipShape(Circle())
                 .overlay(Circle().stroke(Color("PurpleNeon"), lineWidth: 1.5))
-                .shadow(color: Color("PurpleNeon").opacity(0.4), radius: 5)
         }
     }
 }

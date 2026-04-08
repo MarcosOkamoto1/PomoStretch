@@ -16,11 +16,11 @@ struct PrimaryButton: View {
         }) {
             Text(title)
                 .font(.title)
+                .fontWeight(.semibold)
                 .frame(width: 200, height: 56)
                 .foregroundColor(.white)
-                .background(Color("PurplePrimary")) // Corrigido
+                .background(Color("PurplePrimary"))
                 .clipShape(Capsule())
-                .shadow(color: Color("PurplePrimary").opacity(0.4), radius: 8, x: 0, y: 4)
         }
     }
 }

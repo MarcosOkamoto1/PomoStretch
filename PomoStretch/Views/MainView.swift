@@ -1,33 +1,35 @@
 //
-//  MainView.swift
+//  ContentView.swift
 //  PomoStretch
 //
-//  Created by Academy on 06/04/26.
+//  Created by Academy on 03/04/26.
 //
 
 import SwiftUI
-import Foundation
 
 struct MainView: View {
     @State private var selectedTab = 0
+    @StateObject var viewModel = TimerViewModel()
     
     var body: some View {
         ZStack(alignment: .bottom) {
             Color("BackgroundDark").ignoresSafeArea()
             
+            // Aqui carregamos as telas. O Spacer de 100 no final garante que
+            // o conteúdo das outras abas (como a lista de exercícios) não fique escondido atrás da Tab Bar.
             VStack(spacing: 0) {
                 if selectedTab == 0 {
-                    TimerView()
+                    TimerView(viewModel: viewModel)
                 } else if selectedTab == 1 {
                     StretchView()
                 } else {
-                    SettingsView()
+                    SettingsView(viewModel: viewModel)
                 }
-                
-                Spacer().frame(height: 80)
+                Spacer().frame(height: 100)
             }
             .ignoresSafeArea(edges: .bottom)
             
+            // Tab Bar Fixa na mesma posição para todas as abas
             HStack(spacing: 0) {
                 TabBarButton(iconName: "timer", title: "Timer", isSelected: selectedTab == 0) { selectedTab = 0 }
                 TabBarButton(iconName: "figure.walk", title: "Exercícios", isSelected: selectedTab == 1) { selectedTab = 1 }
@@ -39,8 +41,10 @@ struct MainView: View {
             .clipShape(Capsule())
             .shadow(color: .black.opacity(0.4), radius: 15, x: 0, y: 8)
             .padding(.horizontal, 24)
-            
-            .padding(.bottom, 0)
+            .padding(.bottom, 16) // <-- Margem FIXA. A barra nunca mais vai sair do lugar!
+        }
+        .onReceive(NotificationCenter.default.publisher(for: NSNotification.Name("SwitchToStretch"))) { _ in
+            self.selectedTab = 1
         }
     }
 }

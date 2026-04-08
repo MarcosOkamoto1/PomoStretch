@@ -1,15 +1,14 @@
 //
-//  TimerView.swift
+//  ContentView.swift
 //  PomoStretch
 //
 //  Created by Academy on 27/03/26.
 //
 
-import Foundation
 import SwiftUI
 
 struct TimerView: View {
-    @StateObject var viewModel = TimerViewModel()
+    @ObservedObject var viewModel: TimerViewModel
     
     var body: some View {
         ZStack {
@@ -19,23 +18,32 @@ struct TimerView: View {
                 Spacer()
                 
                 VStack(spacing: 12) {
-                    Text("Pomodoro Timer")
+                    Text(viewModel.actualSession == .focus ? "Foco Total" : "Pausa Ativa")
                         .font(.system(size: 32, weight: .bold))
                         .padding(.top)
                     
-                    SessionIndicator(currentSession: viewModel.sessionNumber, totalSessions: viewModel.totalSessions)
+                    Text("Não esqueça de alongar os punhos nas pausas")
+                        .font(.subheadline)
+                        .foregroundColor(.gray)
+                        .multilineTextAlignment(.center)
+                        .padding(.horizontal, 20)
+                    
+                    SessionTagIndicator(
+                        sessionNumber: viewModel.sessionNumber,
+                        targetSessions: viewModel.targetSessions,
+                        actualSession: viewModel.actualSession
+                    )
                 }
                 
                 Spacer()
                 
                 NeonProgressTimer(progress: viewModel.progress, timeString: viewModel.timeString())
-                    .frame(width: 390, height: 400, alignment: .center)
+                    .frame(width: 380, height: 380, alignment: .center)
                 
-                Spacer()
                 
                 HStack(spacing: 24) {
-                    ModeButton(title: "Short Pause", action: {viewModel.setShortPause()}, iconName: "cup.and.saucer.fill")
-                    ModeButton(title: "Long Pause", action: {viewModel.setLongPause()}, iconName: "figure.walk")
+                    ModeButton(title: "Pausa Curta", action: {viewModel.setShortPause()}, iconName: "cup.and.saucer.fill")
+                    ModeButton(title: "Pausa Longa", action: {viewModel.setLongPause()}, iconName: "figure.walk")
                 }
                 .padding(.bottom, 16)
             
@@ -46,7 +54,7 @@ struct TimerView: View {
                         }
                     }
                     
-                    PrimaryButton(title: viewModel.isRunning ? "Pause": "Start", action: {
+                    PrimaryButton(title: viewModel.isRunning ? "Pausar": "Começar", action: {
                         if viewModel.isRunning {
                             viewModel.pauseTimer()
                         } else {
@@ -55,17 +63,10 @@ struct TimerView: View {
                     })
                 }
                 .padding(.horizontal)
-                .padding(.bottom, 40)
-                
+                .padding(.bottom, 30) 
                 Spacer()
             }
             .foregroundColor(.white)
         }
-    }
-}
-
-struct TimerView_Previews: PreviewProvider {
-    static var previews: some View {
-        TimerView()
     }
 }

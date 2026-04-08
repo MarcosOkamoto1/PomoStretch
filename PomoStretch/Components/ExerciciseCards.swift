@@ -7,39 +7,38 @@
 
 import SwiftUI
 
-// MARK: - ExerciciseCards
+
 struct ExerciciseCards: View {
     let title: String
-    let subTitle: String
     let description: String
     let imageName: String
     var isActive: Bool = false
     
     var body: some View {
         HStack(spacing: 20) {
-            Image(systemName: "hand.raised.fill") // Ícone temporário até usarmos o seu imageName real
-                .foregroundColor(Color("SkinTone"))
-                .font(.system(size: 30)) // Ícone levemente maior
-                .frame(width: 68, height: 68) // Caixa do ícone aumentada para dar mais volume
+            
+            Image(imageName)
+                .resizable()
+               
+                .scaledToFill()
+                .frame(width: 86, height: 86)
+                .clipped()
                 .background(Color("SurfaceLight"))
                 .cornerRadius(12)
+                .shadow(color: .black.opacity(0.4), radius: 4, x: 0, y: 2)
             
             VStack(alignment: .leading, spacing: 6) {
                 Text(title)
                     .font(.headline)
                     .foregroundColor(.white)
                 
-                Text(subTitle)
-                    .font(.subheadline) // Mudado de .caption para .subheadline para equilibrar o card maior
-                    .foregroundColor(.gray) // Subtítulo alterado para cinza
-                
                 Text(description)
-                    .font(.caption)
+                    .font(.subheadline)
                     .foregroundColor(.gray)
             }
             Spacer()
         }
-        .padding(24) // Aumentado de 20 para 24 para deixar o card maior e com mais "respiro"
+        .padding(24)
         .frame(maxWidth: .infinity)
         .background(Color("SurfaceDark"))
         .cornerRadius(16)
@@ -59,17 +58,15 @@ struct ExerciciseCards_Previews: PreviewProvider {
             VStack(spacing: 20) {
                 ExerciciseCards(
                     title: "Alongamento Punho",
-                    subTitle: "Alivia tensão",
                     description: "Puxe os dedos para trás",
-                    imageName: "mao_baixo",
+                    imageName: "mao2-Photoroom",
                     isActive: false
                 )
                 
                 ExerciciseCards(
                     title: "Abre e Fecha",
-                    subTitle: "Melhora a circulação",
                     description: "Abra e feche a mão 10x",
-                    imageName: "mao_aberta",
+                    imageName: "mao1-Photoroom",
                     isActive: true
                 )
             }

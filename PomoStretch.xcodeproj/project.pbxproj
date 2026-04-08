@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9F14E9132F7D99F1008C4D06 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F14E9122F7D99F1008C4D06 /* MainTabView.swift */; };
+		9F0E471E2F857F7500169A20 /* Modelos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0E471D2F857F7500169A20 /* Modelos.swift */; };
 		9F14E9152F7DA16B008C4D06 /* StretchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F14E9142F7DA16B008C4D06 /* StretchView.swift */; };
 		9F2798232F842F7E00B6DF12 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2798222F842F7E00B6DF12 /* MainView.swift */; };
+		9F5B9EB62F86A8CF00A8C35C /* SessionTagIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5B9EB52F86A8CF00A8C35C /* SessionTagIndicator.swift */; };
 		9F6B62EE2F7EE45400F47552 /* CapsuleIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6B62ED2F7EE45400F47552 /* CapsuleIndicator.swift */; };
 		9F6B62F02F7F077C00F47552 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6B62EF2F7F077C00F47552 /* SettingsView.swift */; };
 		9F74A8F92F7AED0A00280E1D /* SessionIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F74A8F82F7AED0A00280E1D /* SessionIndicator.swift */; };
@@ -27,9 +28,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9F14E9122F7D99F1008C4D06 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		9F0E471D2F857F7500169A20 /* Modelos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modelos.swift; sourceTree = "<group>"; };
 		9F14E9142F7DA16B008C4D06 /* StretchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StretchView.swift; sourceTree = "<group>"; };
 		9F2798222F842F7E00B6DF12 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		9F5B9EB52F86A8CF00A8C35C /* SessionTagIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionTagIndicator.swift; sourceTree = "<group>"; };
 		9F6B62ED2F7EE45400F47552 /* CapsuleIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsuleIndicator.swift; sourceTree = "<group>"; };
 		9F6B62EF2F7F077C00F47552 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		9F74A8F82F7AED0A00280E1D /* SessionIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionIndicator.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 			isa = PBXGroup;
 			children = (
 				9F74A8FC2F7AF80800280E1D /* TimerViewModel.swift */,
+				9F0E471D2F857F7500169A20 /* Modelos.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -76,6 +79,7 @@
 				9F74A8F82F7AED0A00280E1D /* SessionIndicator.swift */,
 				9F9AA4C72F7DA64500487868 /* ExerciciseCards.swift */,
 				9F6B62ED2F7EE45400F47552 /* CapsuleIndicator.swift */,
+				9F5B9EB52F86A8CF00A8C35C /* SessionTagIndicator.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -85,7 +89,6 @@
 			children = (
 				9FFFEB782F7727330023A66C /* TimerView.swift */,
 				9FCFD8E42F77009A009D1BF0 /* ContentView.swift */,
-				9F14E9122F7D99F1008C4D06 /* MainTabView.swift */,
 				9F14E9142F7DA16B008C4D06 /* StretchView.swift */,
 				9F6B62EF2F7F077C00F47552 /* SettingsView.swift */,
 				9F2798222F842F7E00B6DF12 /* MainView.swift */,
@@ -205,16 +208,17 @@
 				9F6B62EE2F7EE45400F47552 /* CapsuleIndicator.swift in Sources */,
 				9FFFEB752F770C930023A66C /* ModeButton.swift in Sources */,
 				9F74A8F92F7AED0A00280E1D /* SessionIndicator.swift in Sources */,
+				9F5B9EB62F86A8CF00A8C35C /* SessionTagIndicator.swift in Sources */,
 				9F74A8FB2F7AED4600280E1D /* ResetButton.swift in Sources */,
 				9FFFEB732F770C6D0023A66C /* PrimaryButton.swift in Sources */,
 				9F6B62F02F7F077C00F47552 /* SettingsView.swift in Sources */,
 				9FCFD8E52F77009A009D1BF0 /* ContentView.swift in Sources */,
 				9FFFEB772F7711C50023A66C /* NeonProgressTimer.swift in Sources */,
 				9FCFD8E32F77009A009D1BF0 /* PomoStretchApp.swift in Sources */,
+				9F0E471E2F857F7500169A20 /* Modelos.swift in Sources */,
 				9F9AA4C82F7DA64500487868 /* ExerciciseCards.swift in Sources */,
 				9F14E9152F7DA16B008C4D06 /* StretchView.swift in Sources */,
 				9F2798232F842F7E00B6DF12 /* MainView.swift in Sources */,
-				9F14E9132F7D99F1008C4D06 /* MainTabView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

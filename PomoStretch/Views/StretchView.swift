@@ -1,12 +1,9 @@
 //
-//  StretchView.swift
+//  SettingsView.swift
 //  PomoStretch
 //
-//  Created by Academy on 01/04/26.
+//  Created by Academy on 30/03/26.
 //
-
-import SwiftUI
-import Foundation
 
 import SwiftUI
 
@@ -15,57 +12,98 @@ struct StretchView: View {
         ZStack {
             Color("BackgroundDark").ignoresSafeArea()
             
-            ScrollView(showsIndicators: false) {
-                VStack(spacing: 28) {
+            VStack(spacing: 0) {
+                VStack(spacing: 8) {
+                    Text("Alongamentos")
+                        .font(.system(size: 32, weight: .bold))
+                        .foregroundColor(.white)
                     
-                    VStack(spacing: 8) {
-                        Text("Rotina de Prevenção")
-                            .font(.title)
-                            .fontWeight(.bold)
-                            .foregroundColor(.white)
-                        
-                        Text("Alongamentos para aliviar tendões e articulações")
-                            .font(.subheadline)
-                            .foregroundColor(.gray)
-                            .multilineTextAlignment(.center)
-                    }
-                    .padding(.top, 40)
-                    
-                    CapsuleIndicator(text: "Short Pause (5 min)", iconName: "cup.and.saucer.fill")
-                    
-                    ExerciciseCards(title: "Abre e Fecha...",
-                                    subTitle: "Melhora a circulação",
-                                    description: "Abra e feche as mãos 10x.",
-                                    imageName: "mao_aberta",
-                                    isActive: true)
-                    
-                    ExerciciseCards(title: "Alongamento Punho",
-                                    subTitle: "Estica o antebraço",
-                                    description: "Mão para baixo, puxe os dedos.",
-                                    imageName: "mao_baixo")
-                    
-                    ExerciciseCards(title: "Elevação Punho",
-                                    subTitle: "Alivia tensão",
-                                    description: "Mão para cima, puxe os dedos.",
-                                    imageName: "mao_cima")
-                    
-                    CapsuleIndicator(text: "Long Pause (20 min)", iconName: "moon.stars.fill")
-                        .padding(.top, 16)
-                    
-                    ExerciciseCards(title: "Liberação...",
-                                    subTitle: "Relaxa a palma",
-                                    description: "Massageie o centro da mão.",
-                                    imageName: "mao_meio")
-                    
-                    ExerciciseCards(title: "Rotação...",
-                                    subTitle: "Lubrifica a articulação",
-                                    description: "Gire os punhos 5x para cada lado.",
-                                    imageName: "mao_girando")
+                    Text("Previna lesões por esforço repetitivo")
+                        .font(.subheadline)
+                        .foregroundColor(.gray)
                 }
-                .padding(.horizontal, 20)
+                .padding(.top, 40)
                 .padding(.bottom, 20)
+                ScrollView(showsIndicators: false) {
+               
+                    VStack(spacing: 24) {
+                        
+                        VStack(spacing: 12) {
+                            CapsuleIndicator(text: "Pausa Curta (5 min)", iconName: "cup.and.saucer.fill")
+                                .padding(.bottom, 4)
+                            
+                            ForEach(ExerciseData.shortBreakExercises) { exercise in
+                                ExerciseCard(exercise: exercise)
+                            }
+                        }
+                        
+                        VStack(spacing: 12) {
+                            CapsuleIndicator(text: "Pausa Longa (15 min)", iconName: "figure.walk")
+                                .padding(.bottom, 4)
+                            
+                            ForEach(ExerciseData.longBreakExercises) { exercise in
+                                ExerciseCard(exercise: exercise)
+                            }
+                        }
+                        
+                    }
+                    .padding(.top, 4)
+                    .padding(.bottom, 120)
+                }
             }
         }
+    }
+}
+
+struct ExerciseCard: View {
+    let exercise: Exercise
+    
+    var body: some View {
+        HStack(alignment: .top, spacing: 16) {
+            
+            Image(exercise.imageName)
+                .resizable()
+                .scaledToFill()
+                .frame(width: 70, height: 70)
+                .clipShape(RoundedRectangle(cornerRadius: 12))
+                .overlay(
+                    RoundedRectangle(cornerRadius: 12)
+                        .stroke(Color("PurpleNeon").opacity(0.5), lineWidth: 1)
+                )
+                .shadow(color: Color("PurpleNeon").opacity(0.3), radius: 6, x: 0, y: 4)
+            
+            VStack(alignment: .leading, spacing: 8) {
+                Text(exercise.title)
+                    .font(.headline)
+                    .foregroundColor(.white)
+                
+                HStack(spacing: 12) {
+                    HStack(spacing: 4) {
+                        Image(systemName: "repeat")
+                        Text("\(exercise.sets) séries")
+                    }
+                    
+                    HStack(spacing: 4) {
+                        Image(systemName: "clock")
+                        Text(exercise.repsOrDuration)
+                    }
+                }
+                .font(.caption)
+                .foregroundColor(Color("PurpleNeon"))
+        
+                Text(exercise.description)
+                    .font(.footnote)
+                    .foregroundColor(.white.opacity(0.8))
+                    .lineLimit(4)
+                    .multilineTextAlignment(.leading)
+                    .padding(.top, 2)
+            }
+            Spacer()
+        }
+        .padding()
+        .background(Color("SurfaceDark"))
+        .cornerRadius(20)
+        .padding(.horizontal, 24)
     }
 }
 
